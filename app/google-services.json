@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "894689627239",
+    "project_id": "deeplinkpoc-ea36a",
+    "storage_bucket": "deeplinkpoc-ea36a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894689627239:android:24438030c8248a76be98c2",
+        "android_client_info": {
+          "package_name": "com.example.deeplinkpoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894689627239-c3rqlracbu91tvj19bre5drdfvm0eppq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.deeplinkpoc",
+            "certificate_hash": "3b88b26cc78aff7193b5ff9224c34db4af597a0c"
+          }
+        },
+        {
+          "client_id": "894689627239-tc11pp0ej3tupj4cmvsr3ths8kuvglji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlZGVMPGyIMQJHBR-ZCYwRCblCuK4cicw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894689627239-tc11pp0ej3tupj4cmvsr3ths8kuvglji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
