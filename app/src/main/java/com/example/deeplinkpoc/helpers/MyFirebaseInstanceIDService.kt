@@ -1,7 +1,5 @@
 package com.example.deeplinkpoc.helpers
 
-import android.util.Log
-import com.example.deeplinkpoc.helpers.NotificationHelper.makeNotification
 import com.example.deeplinkpoc.model.NotificationModel
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -27,7 +25,7 @@ class MyFirebaseInstanceIDService : FirebaseMessagingService() {
             }
 
             val notificationModel = NotificationModel(title, message, destination, productId)
-            makeNotification(this, notificationModel)
+            this.makeNotification(notificationModel)
         }
     }
 
