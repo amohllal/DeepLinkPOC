@@ -10,13 +10,25 @@
         android:name="com.example.implicit.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_authFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.implicit.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_authFragment"
+            app:destination="@id/authFragment" />
         <argument
             android:name="id"
             app:argType="string"
             android:defaultValue="ahmed"
-             />
+            />
         <deepLink
             android:id="@+id/deepLink"
-            app:uri="www.implicitdeeplink.com/auth/{id}" />
+            app:uri="http://www.implicitdeeplink.com/auth/{id}" />
     </fragment>
 </navigation>

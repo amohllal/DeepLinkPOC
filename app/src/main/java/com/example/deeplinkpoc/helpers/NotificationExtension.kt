@@ -15,6 +15,7 @@ import androidx.navigation.NavDeepLinkBuilder
 import androidx.navigation.NavDeepLinkSaveStateControl
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import com.example.deeplinkpoc.R
+import com.example.deeplinkpoc.activities.MainActivity
 import com.example.deeplinkpoc.model.NotificationModel
 import com.example.implicit.HostingActivity
 import kotlin.random.Random
@@ -26,7 +27,8 @@ fun Context.makeNotification(notificationModel: NotificationModel) {
 
     val intent = Intent(this, HostingActivity::class.java).apply {
         flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        putExtra("deeplink",notificationModel.destination.toUri())
+        flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
+        data = notificationModel.destination.toUri()
     }
 
     val pendingIntent =

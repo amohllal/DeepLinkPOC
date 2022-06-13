@@ -40,8 +40,13 @@
             android:id="@+id/move_from_loginFragment_to_tutorialFragment"
             app:destination="@id/tutorialFragment" />
         <argument
-            android:name="productId"
+            android:name="id"
             app:argType="string"
-            android:defaultValue="null"/>
+            android:defaultValue="ahmed"
+            />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="http://www.implicitdeeplink.com/auth/{id}" />
+
     </fragment>
 </navigation>

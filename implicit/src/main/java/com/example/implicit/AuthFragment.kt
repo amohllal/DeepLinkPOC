@@ -25,7 +25,6 @@ class AuthFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        url_content_tv.text = arguments?.getString("productId")
     }
 
 

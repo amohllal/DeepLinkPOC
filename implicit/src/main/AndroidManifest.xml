@@ -5,7 +5,8 @@
     <application>
         <activity
             android:name=".HostingActivity"
-            android:exported="false" >
+            android:exported="true"
+            android:launchMode="singleTask">
             <nav-graph android:value="@navigation/implicit_nav_graph" />
         </activity>
     </application>
