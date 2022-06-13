@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.implicit">
+
+    <application>
+        <activity
+            android:name=".HostingActivity"
+            android:exported="false" >
+            <nav-graph android:value="@navigation/implicit_nav_graph" />
+        </activity>
+    </application>
+
+</manifest>

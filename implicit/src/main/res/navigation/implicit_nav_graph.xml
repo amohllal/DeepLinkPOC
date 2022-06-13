@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/implicit_nav_graph"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.implicit.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth">
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="ahmed"
+             />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.implicitdeeplink.com/auth/{id}" />
+    </fragment>
+</navigation>

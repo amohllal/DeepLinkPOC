@@ -7,6 +7,8 @@
         <entry key="..\:/DeepLinkPOC/app/src/main/res/layout/fragment_login.xml" value="0.22826086956521738" />
         <entry key="..\:/DeepLinkPOC/app/src/main/res/layout/fragment_on_boarding.xml" value="0.22826086956521738" />
         <entry key="..\:/DeepLinkPOC/app/src/main/res/layout/fragment_tutorial.xml" value="0.22826086956521738" />
+        <entry key="..\:/DeepLinkPOC/implicit/src/main/res/layout/activity_hosting.xml" value="0.22826086956521738" />
+        <entry key="..\:/DeepLinkPOC/implicit/src/main/res/layout/fragment_auth.xml" value="0.22826086956521738" />
       </map>
     </option>
   </component>

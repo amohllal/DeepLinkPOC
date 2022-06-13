@@ -4,29 +4,33 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
+import androidx.core.net.toUri
 import androidx.core.os.bundleOf
+import androidx.navigation.NavController
 import androidx.navigation.NavDeepLinkBuilder
+import androidx.navigation.NavDeepLinkSaveStateControl
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import com.example.deeplinkpoc.R
 import com.example.deeplinkpoc.model.NotificationModel
+import com.example.implicit.HostingActivity
 import kotlin.random.Random
 
 
 fun Context.makeNotification(notificationModel: NotificationModel) {
     val channelName = this.packageName
     val notificationChannelId = this.getString(R.string.default_notification_channel_id)
-    val bundle = bundleOf("productId" to notificationModel.destinationContent)
 
-    val destination = notificationModel.checkDestination()
+    val intent = Intent(this, HostingActivity::class.java).apply {
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        putExtra("deeplink",notificationModel.destination.toUri())
+    }
 
-    val pendingIntent = NavDeepLinkBuilder(
-        this
-    )
-        .setGraph(R.navigation.deep_link_nav)
-        .setDestination(destination ?: return)
-        .setArguments(bundle)
-        .createPendingIntent()
+    val pendingIntent =
+        PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
     val notificationManager =
         this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -40,16 +44,6 @@ fun Context.makeNotification(notificationModel: NotificationModel) {
     )
 
 }
-
-fun NotificationModel.checkDestination(): Int? {
-    var destination: Int? = null
-    when {
-        this.destination.contains("tutorial") -> destination = R.id.tutorialFragment
-        this.destination.contains("login") -> destination = R.id.loginFragment
-    }
-    return destination
-}
-
 fun NotificationManager.sendNotification(
     channelName: String,
     notificationChannelId: String,
